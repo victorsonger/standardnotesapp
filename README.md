@@ -6,6 +6,16 @@ Standard Notes is an end-to-end encrypted note-taking app for digitalists and pr
 [![Discord](https://img.shields.io/badge/discord-standardnotes-CC2B5E.svg?style=flat&logo=discord)](https://standardnotes.com/discord)
 [![Twitter Follow](https://img.shields.io/badge/follow-%40standardnotes-blue.svg?style=flat&logo=twitter)](https://twitter.com/standardnotes)
 
+## 推送说明
+ 这个项目是fork自[standardnotes/app](https://github.com/standardnotes/app)的
+ 
+ 可以通过```git remote -v```来查看原始分支和fork分支的链接
+
+
+推送到fork分支的方法：
+```
+git push fork-origin main
+```
 ### Why Standard Notes?
 
 - End-to-end encrypted sync. Only you can read your notes.

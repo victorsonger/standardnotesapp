@@ -350,7 +350,7 @@ const MobileWebAppContents = ({ destroyAndReload }: { destroyAndReload: () => vo
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: 'black',
+          backgroundColor: 'white',
         }}
       >
         <Text
@@ -391,45 +391,56 @@ const MobileWebAppContents = ({ destroyAndReload }: { destroyAndReload: () => vo
         backgroundColor: '#000000',
       }}
     >
-      <WebView
-        ref={webViewRef}
-        source={{ uri: sourceUri }}
+      <Text
         style={{
-          backgroundColor: Platform.OS === 'ios' ? 'transparent' : '#000000',
-          opacity: didLoadEnd ? 1 : 0,
+          flex: 1,
+          padding: 50,
+          color: '#ffffff',
         }}
-        originWhitelist={['*']}
-        onError={(err) => console.error('An error has occurred', err)}
-        onHttpError={() => console.error('An HTTP error occurred')}
-        onMessage={onMessage}
-        onContentProcessDidTerminate={() => {
-          webViewRef.current?.reload()
-        }}
-        onRenderProcessGone={() => {
-          webViewRef.current?.reload()
-        }}
-        hideKeyboardAccessoryView={true}
-        onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
-        allowFileAccess={true}
-        allowUniversalAccessFromFileURLs={true}
-        injectedJavaScriptBeforeContentLoaded={injectedJS}
-        bounces={false}
-        keyboardDisplayRequiresUserAction={false}
-        allowsInlineMediaPlayback={requireInlineMediaPlaybackForMomentsFeature}
-        mediaPlaybackRequiresUserAction={requireMediaUserInteractionForMomentsFeature}
-        scalesPageToFit={true}
+      >
+        ddd
+      </Text>
+      <WebView
+        source={{ uri: 'https://reactnative.dev/' }}
+        style={{ flex: 1 }}
+        // ref={webViewRef}
+        // source={{ uri: sourceUri }}
+        // style={{
+        //   backgroundColor: Platform.OS === 'ios' ? 'transparent' : '#000000',
+        //   opacity: didLoadEnd ? 1 : 0,
+        // }}
+        // originWhitelist={['*']}
+        // onError={(err) => console.error('An error has occurred', err)}
+        // onHttpError={() => console.error('An HTTP error occurred')}
+        // onMessage={onMessage}
+        // onContentProcessDidTerminate={() => {
+        //   webViewRef.current?.reload()
+        // }}
+        // onRenderProcessGone={() => {
+        //   webViewRef.current?.reload()
+        // }}
+        // hideKeyboardAccessoryView={true}
+        // onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
+        // allowFileAccess={true}
+        // allowUniversalAccessFromFileURLs={true}
+        // injectedJavaScriptBeforeContentLoaded={injectedJS}
+        // bounces={false}
+        // keyboardDisplayRequiresUserAction={false}
+        // allowsInlineMediaPlayback={requireInlineMediaPlaybackForMomentsFeature}
+        // mediaPlaybackRequiresUserAction={requireMediaUserInteractionForMomentsFeature}
+        // scalesPageToFit={true}
         /**
          * This disables the global window scroll but keeps scroll within div elements like lists and textareas.
          * This is needed to prevent the keyboard from pushing the webview up and down when it appears and disappears.
          */
-        scrollEnabled={false}
-        overScrollMode="never"
-        nativeConfig={Platform.select({
-          android: {
-            component: CustomAndroidWebView,
-          } as WebViewNativeConfig,
-        })}
-        webviewDebuggingEnabled
+        // scrollEnabled={false}
+        // overScrollMode="never"
+        // nativeConfig={Platform.select({
+        //   android: {
+        //     component: CustomAndroidWebView,
+        //   } as WebViewNativeConfig,
+        // })}
+        // webviewDebuggingEnabled
       />
     </View>
   )

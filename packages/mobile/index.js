@@ -28,4 +28,6 @@ console.warn = function filterWarnings(msg) {
   }
 }
 
+console.log('sassass');
+
 AppRegistry.registerComponent(appName, () => MobileWebApp)
